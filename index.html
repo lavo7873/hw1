@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Lam Vinh Vong</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 16px Helvetica, Sans-Serif;
+            line-height: 24px;
+            background: url(images/noise.jpg);
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        #page-wrap {
+            width: 800px;
+            margin: 40px auto 60px;
+        }
+
+        #pic {
+            float: right;
+            margin: -30px 0 0 0;
+        }
+
+        video {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+            float: left;
+        }
+
+        h1 {
+            margin: 0 0 16px 0;
+            padding: 0 0 16px 0;
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: -2px;
+            color: #209f92;
+            border-bottom: 1px solid #209f92;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 0 0 6px 0;
+            position: relative;
+            color:  #209f92;
+        }
+
+        h3{
+            font-size: 15px;
+            padding: 0 0 16px 0;
+        }
+
+        h2 span {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-style: italic;
+            font-family: Georgia, Serif;
+            font-size: 16px;
+            color:  #209f92;
+            font-weight: normal;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+        }
+
+        a {
+            color:  #209f92;
+            text-decoration: none;
+            border-bottom: 1px dotted #999;
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+            color: black;
+        }
+
+        ul {
+            margin: 0 0 32px 17px;
+        }
+
+        #objective {
+            width: 500px;
+            float: left;
+        }
+
+        #objective p {
+            font-family: Georgia, Serif;
+            font-style: italic;
+            color: #666;
+            text-align: justify;
+        }
+
+        dt {
+            color:  #209f92;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: right;
+            padding: 0 26px 0 0;
+            width: 150px;
+            float: left;
+            height: 100px;
+            border-right: 1px solid #999;
+        }
+
+        dd {
+            width: 600px;
+            float: right;
+        }
+
+        dd.clear {
+            float: none;
+            margin: 0;
+            height: 15px;
+        }
+
+        nav {
+            margin: auto;
+            margin-top: 0px;
+            position: relative;
+        }
+
+        nav h2 {
+            border-radius: 2px;
+            position: relative;
+            background: #209f92;
+            height: 40px;
+            margin-bottom: 0;
+            color: inherit;
+            display: flex;
+            flex: 1;
+            justify-content: left;
+            align-items: center;
+            box-shadow: 4px 4px 20px -2px rgba(0, 0, 0, 0.35);
+            transition: all 0.4s;
+        }
+
+        nav:hover h2 {
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
+            transistion: all 0.4s;
+        }
+
+        #toggle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            opacity: 0;
+            cursor: pointer;
+            height: 40px;
+        }
+
+        h2::before {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: inherit;
+            aspect-ratio: 1;
+            background: currentColor;
+            display: flex;
+            align-items: center;
+            padding-right: 1rem;
+            content: "";
+            clip-path: polygon(50% 25%, 20% 80%, 80% 80%);
+            transform: rotate(180deg) scale(0.75);
+        }
+
+        #toggle:not(:checked)~h2::before {
+            transform: rotate(0deg) scale(0.75);
+        }
+
+        #toggle:focus~h2 {
+            background: transparent;
+            transition: background 0.45s;
+        }
+
+        #toggle:checked~ul {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        #toggle:not(:checked)~ul {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        nav ul {
+            padding-left: 0;
+            padding-top: 1rem;
+            margin-top: 0;
+            background: white;
+            list-style: none;
+            overflow: hidden;
+            text-align: right;
+            text-align: center;
+            transition: all 0.4s ease-out;
+            width: 100%;
+            position: absolute;
+        }
+
+        nav ul li {
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            line-height: 1.5;
+            width: 100%;
+            margin: 0 0 0.25rem 0;
+            background:  #209f92;
+            transition: background 3s;
+            box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.35);
+        }
+
+        nav ul li:hover,
+        nav ul li a:focus {
+            background: darkgray;
+            transition: background 0.45s;
+        }
+
+        nav ul a {
+            display: block;
+            color: inherit;
+            text-transform: lowercase;
+            font-weight: 200;
+            text-decoration: none;
+        }
+
+
+        .container {
+            margin: auto;
+            color: #36454F;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page-wrap">
+
+        <img src="images/pf.jfif" alt="Photo of Cthulu" id="pic" />
+
+        <div id="contact-info" class="vcard">
+
+            <h1 class="fn">Josep Washu</h1>
+
+            <p>
+                Phone: <span class="tel">(669)-233-5123.</span><br />
+                Text: <span class="tel">(669)-233-5123.</span><br />
+                Email: <a class="email" href="">linhuang1101@gmail.com</a>
+            </p>
+        </div>
+
+        <div id="objective">
+            <p>
+                Looking for assembly position or any available position
+            </p>
+
+            <h2>Introduction Video</h2>
+            <video controls>
+                <source src="videos/your_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="clear"></div>
+
+        <dl>
+            <dd class="clear"></dd>
+
+            <dt>Education</dt>
+            <dd>
+                <h2>Finished high school in VietNam<span>06/2015</span></h2>
+                <p> Have a chance join to the university.<br /></p>
+
+                <h2>San Jose City College<span>09/2017-05/2022</span></h2>
+                <p>Finished with GPA of 3.58 and have an Associate’s degree.<br /></p>
+                <a href="pages/transcript.html">Transcript</a>
+
+                <h2>San José State University<span>08/2022- currently</span></h2>
+                <p>Major in Software Engineering<br /></p>
+
+                <h3>Awarded scholarship Vietnamese in America of San Jose City College.</h3>
+
+                <h3>Waiting awarding scholarship Jabil in San José State University.</h3>
+                
+            </dd>
+
+            <dd class="clear"></dd>
+
+            <dt>Skills</dt>
+            <dd>
+                <h2>Professional Skills</h2>
+                <ul>
+                    <li>Waiting awarding scholarship Jabil in San José State University.</li>
+                    <li>Building cable and harness.</li>
+                    <li>Proficent with PC, experiences with MS-Ofice.</li>
+                    <li>Using hand tools and machine tools to crimp</li>
+                    <li>Basic Python, Html/Css Front-end and still learning by myself to improve.</li>
+                </ul>
+
+                <h2>Strength</h2>
+                <ul>
+                    <li>Good comunication and work with team</li>
+                    <li>Honest, careful, and modest</li>
+                    <li>Passionate about learning and improving myself</li>
+                </ul>
+            </dd>
+
+            <dd class="clear"></dd>
+            
+
+            <dt>Work Experience</dt>
+            <dd>
+                <h2>Tesla<span>Assembler level 3 10/2018-11/2020</span></h2>
+                <ul>
+                    <li>Reading the instructions of industry</li>
+                    <li>Build the front of car.</li>
+                    <li>Using the crew and connect cable</li>
+                    <li>Testing side the car</li>
+                </ul>
+
+                <h2>Benchmark<span>Test Operator 5/2017 - 8/2018</span></h2>
+                <ul>
+                    <li>Reading the instructions of industry</li>
+                    <li>Thermal board machine, test machine with big machine shaking is vibe</li>
+                    <li>Hand solder circuit and connect cable with testing side</li>
+                    <li>Change fixtures, test IO , SCB , PCM</li>
+                    <li>Solder circuits If Company doesn’t have enough employees</li>
+                </ul>
+
+                <h2>Amax<span>Assembler level 3 6/2017 – 7/2017</span></h2>
+                <ul>
+                    <li>Reading the instructions of industry</li>
+                    <li>Building system</li>
+                    <li>Put glue , cable , test BAE , flast light.</li>
+                    <li>Testing side the car</li>
+                    <li>Package the machine in the box when complete the machine</li>
+                </ul>
+
+                <h2>Quanta building 2 at Fremont, USA<span>QC level 3  9/2015-5/2017</span></h2>
+                <ul>
+                    <li>Reading the instructions of industry</li>
+                    <li>Hand solder and Inspect SMT components</li>
+                    <li>Attaching cables, screws</li>
+                    <li>Change SMTcomponents, mounted fan, put the hard drive</li>
+                    <li>Inspect components and many other jobs in building</li>
+                    <li>Go to the test side test operator</li>
+                </ul>
+            </dd>
+
+            <dd class="clear"></dd>
+
+            <dt>Projects</dt>
+            <dd>
+                <nav>
+                    <input id="toggle" type="checkbox" checked>
+                    <h2>Show Projects</h2>
+                    <ul>
+                        <li><a href="pages/project1.html">Project 01</a></li>
+                        <li><a href="pages/project2.html">Project 02</a></li>
+                    </ul>
+                </nav>
+            </dd>
+
+            <dd class="clear"></dd>
+
+            <dt>Hobbies</dt>
+            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+
+            <dd class="clear"></dd>
+
+            <dt>References</dt>
+            <dd>Someone</dd>
+
+            <dd class="clear"></dd>
+        </dl>
+
+        <div class="clear"></div>
+
+    </div>
+
+</body>
+
+</html>

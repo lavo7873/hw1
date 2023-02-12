@@ -1,0 +1,138 @@
+<html>
+
+<head>
+  <title>Transcript Table</title>
+  <style>
+    /* Table styles */
+
+    body {
+      font: 16px Helvetica, Sans-Serif;
+      line-height: 24px;
+      background: url(images/noise.jpg);
+    }
+
+    #page-wrap {
+      width: 800px;
+      margin: 40px auto 60px;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    #pic {
+      float: right;
+      margin: -30px 0 0 0;
+    }
+
+    video {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 500px;
+      float: left;
+    }
+
+    h1 {
+      margin: 0 0 16px 0;
+      padding: 0 0 16px 0;
+      font-size: 42px;
+      font-weight: bold;
+      letter-spacing: -2px;
+      color: #209f92;
+      border-bottom: 1px solid #209f92;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 0 0 6px 0;
+      position: relative;
+    }
+
+    .trancript-table {
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      min-width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .trancript-table thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    .trancript-table th,
+    .trancript-table td {
+      padding: 12px 15px;
+    }
+
+    .trancript-table tbody tr {
+      border-bottom: 1px solid #009879;
+    }
+
+    .trancript-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    .trancript-table tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+
+    #gpa {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-wrap">
+    <h1>Transcript Table</h1>
+
+    <div id="table-div">
+      <table class="trancript-table">
+        <tr>
+          <th>Semester</th>
+          <th>Course</th>
+          <th>Grade</th>
+          <th>Credits</th>
+        </tr>
+        <tr>
+          <td>Fall 20XX</td>
+          <td>Introduction to Computer Science</td>
+          <td>A</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Fall 20XX</td>
+          <td>Calculus I</td>
+          <td>B+</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Spring 20XX</td>
+          <td>Data Structures and Algorithms</td>
+          <td>A-</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>Spring 20XX</td>
+          <td>Calculus II</td>
+          <td>A</td>
+          <td>3</td>
+        </tr>
+      </table>
+    </div>
+    <div id="gpa">
+      <p>GPA: 3.67</p>
+    </div>
+
+  </div>
+</body>
+
+</html>
